@@ -1,0 +1,10 @@
+- hosts: "alpaca-cluster"
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Install GPG
+      ansible.builtin.apt:
+        name: gpg
+        state: present
+        update_cache: true
