@@ -1,0 +1,9 @@
+- hosts: "alpaca4.internal"
+  become: true
+  become_user: root
+  tasks:
+    - name: Install Dependencies
+      ansible.builtin.apt:
+        name: nfs-common
+        state: present
+        update_cache: true
