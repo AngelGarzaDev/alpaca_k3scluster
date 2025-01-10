@@ -6,7 +6,7 @@ metadata:
     app: bazarr
     use: media-infra
   name: bazarr
-  namespace: default
+  namespace: media
 spec:
   selector:
     app: bazarr
@@ -19,7 +19,7 @@ metadata:
     app: bazarr
     use: media-infra
   name: bazarr
-  namespace: default
+  namespace: media
 spec:
   replicas: 1
   selector:
@@ -48,9 +48,9 @@ spec:
         - name: data
           mountPath: /config
         securityContext:
-          allowPrivilegeEscalation: true # not a best practice. linuxserver.io requirement
+          allowPrivilegeEscalation: false # not a best practice. linuxserver.io requirement
           readOnlyRootFilesystem: false # not a best practice
-          runAsNonRoot: false         # not a best practice. linuxserver.io containers require root privilege
+#          runAsNonRoot: true         # not a best practice. linuxserver.io containers require root privilege
 #          capabilities:
 #            drop: 
 #            - all
@@ -73,7 +73,7 @@ metadata:
     app: bazarr
     use: media-infra
   name: bazarr-lb
-  namespace: default
+  namespace: media
 spec:
   ports:
   - port: 6767
