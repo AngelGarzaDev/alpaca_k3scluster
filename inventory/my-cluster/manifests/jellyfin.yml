@@ -5,7 +5,7 @@ metadata:
     app: jellyfin
     use: media-fe
   name: jellyfin
-  namespace: media
+  namespace: production
 spec:
   selector:
     app: jellyfin
@@ -20,7 +20,7 @@ metadata:
   labels:
     app: jellyfin
   name: jellyfin-lb
-  namespace: media
+  namespace: production
 spec:
   ports:
   - port: 8096
@@ -38,7 +38,7 @@ metadata:
   labels:
     app: jellyfin
   name: jellyfin
-  namespace: media
+  namespace: production
 spec:
   replicas: 1
   selector:
